@@ -1,4 +1,4 @@
-#HiddenWaterMark
+# HiddenWaterMark
 
 Image processing. Add hidden water mark into loaded image.
 
