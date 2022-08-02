@@ -213,32 +213,32 @@ class MainWindow(QWidget):
         tempItemX = tempItemX + itemW*0.8
         self.watermark_text = QLineEdit('This is a test.', self)
         self.watermark_text.resize(itemW, itemH)
-        self.watermark_text.move(tempItemX, itemY)
+        self.watermark_text.move(int(tempItemX), int(itemY))
         tempItemX += itemW
         #add watermark Btn
         self.createWatermarkBtn = QPushButton('Generate', self)
         # set evenet handler
         self.createWatermarkBtn.clicked.connect(self.createWatermarkBtn_Clicked)
-        self.createWatermarkBtn.move(tempItemX, itemY-4)
+        self.createWatermarkBtn.move(int(tempItemX), int(itemY-4))
 
         itemY += 30
         tempItemX = 430
         self.addWatermarkBtn = QPushButton('Add WaterMark', self)
         self.addWatermarkBtn.clicked.connect(self.addWatermarkBtn_Clicked)
-        self.addWatermarkBtn.move(tempItemX, itemY-4)
+        self.addWatermarkBtn.move(int(tempItemX), int(itemY-4))
  
         itemY += 30
         tempItemX = 430
         self.extractWatermarkBtn = QPushButton('Extract WaterMark', self)
         self.extractWatermarkBtn.clicked.connect(self.extractWatermarkBtn_Clicked)
-        self.extractWatermarkBtn.move(tempItemX, itemY)
+        self.extractWatermarkBtn.move(int(tempItemX), int(itemY))
 
         # cut image
         tempItemX = 840
         itemY = 20
         self.cutImageBtn = QPushButton('Cut Image', self)
         self.cutImageBtn.clicked.connect(self.cutImageBtn_Click)
-        self.cutImageBtn.move(tempItemX, itemY-4)
+        self.cutImageBtn.move(int(tempItemX), int(itemY-4))
 
         itemY += 30
         itemW = 80
@@ -246,39 +246,39 @@ class MainWindow(QWidget):
         tempItemX = 850
         self.cutImage_PosX_label = QLabel('Pos X:', self)
         self.cutImage_PosX_label.resize(itemW+10, itemH)
-        self.cutImage_PosX_label.move(tempItemX, itemY)
+        self.cutImage_PosX_label.move(int(tempItemX), int(itemY))
         tempItemX = tempItemX + itemW + 15
         self.cutImage_PosX_text = QLineEdit(self)
         self.cutImage_PosX_text.resize(itemW, itemH)
-        self.cutImage_PosX_text.move(tempItemX, itemY)
+        self.cutImage_PosX_text.move(int(tempItemX), int(itemY))
         tempItemX = tempItemX + itemW + 10
 
         self.cutImage_PosY_label = QLabel('Pos Y:', self)
         self.cutImage_PosY_label.resize(itemW+20, itemH)
-        self.cutImage_PosY_label.move(tempItemX, itemY)
+        self.cutImage_PosY_label.move(int(tempItemX), int(itemY))
         tempItemX = tempItemX + itemW + 20
         self.cutImage_PosY_text = QLineEdit(self)
         self.cutImage_PosY_text.resize(itemW, itemH)
-        self.cutImage_PosY_text.move(tempItemX, itemY)
+        self.cutImage_PosY_text.move(int(tempItemX), int(itemY))
 
         itemY += 25
         tempItemX = 850
         self.cutImage_W_label = QLabel('ROI Width:', self)
         self.cutImage_W_label.resize(itemW+10, itemH)
-        self.cutImage_W_label.move(tempItemX, itemY)
+        self.cutImage_W_label.move(int(tempItemX), int(itemY))
         tempItemX = tempItemX + itemW + 15
         self.cutImage_W_text = QLineEdit(self)
         self.cutImage_W_text.resize(itemW, itemH)
-        self.cutImage_W_text.move(tempItemX, itemY)
+        self.cutImage_W_text.move(int(tempItemX), int(itemY))
         tempItemX = tempItemX + itemW + 10
 
         self.cutImage_H_label = QLabel('ROI Height:', self)
         self.cutImage_H_label.resize(itemW+20, itemH)
-        self.cutImage_H_label.move(tempItemX, itemY)
+        self.cutImage_H_label.move(int(tempItemX), int(itemY))
         tempItemX = tempItemX + itemW + 20
         self.cutImage_H_text = QLineEdit(self)
         self.cutImage_H_text.resize(itemW, itemH)
-        self.cutImage_H_text.move(tempItemX, itemY)
+        self.cutImage_H_text.move(int(tempItemX), int(itemY))
 
         itemY += 30
         tempItemX = 850
@@ -287,12 +287,12 @@ class MainWindow(QWidget):
         self.roi_image_label.setStyleSheet(
             'border: gray; border-style:solid; border-width: 1px;')
         self.roi_image_label.resize(200, 150)
-        self.roi_image_label.move(tempItemX, itemY)
+        self.roi_image_label.move(int(tempItemX), int(itemY))
 
         itemY += 160
         self.cutImageSaveBtn = QPushButton('Save as', self)
         self.cutImageSaveBtn.clicked.connect(self.cutImageSaveBtn_Clicked)
-        self.cutImageSaveBtn.move(tempItemX, itemY-4)  
+        self.cutImageSaveBtn.move(int(tempItemX), int(itemY-4))
 
         itemW = 100
         tempItemX = tempItemX + 80
@@ -301,17 +301,17 @@ class MainWindow(QWidget):
         self.roi_convert_format_cb.addItem("bmp")
         self.roi_convert_format_cb.addItem("png")
         self.roi_convert_format_cb.resize(itemW, itemH)
-        self.roi_convert_format_cb.move(tempItemX, itemY + 2)
+        self.roi_convert_format_cb.move(int(tempItemX), int( + 2))
 
         itemW = 70
         itemY += 30
         tempItemX = 850
         self.roi_convert_FileName_label = QLabel('File Name:', self)
         self.roi_convert_FileName_label.resize(itemW, itemH)
-        self.roi_convert_FileName_label.move(tempItemX, itemY)
+        self.roi_convert_FileName_label.move(int(tempItemX), int(itemY))
         self.roi_convert_FileName_text = QLineEdit('roiImage', self)
         self.roi_convert_FileName_text.resize(itemW, itemH)
-        self.roi_convert_FileName_text.move(tempItemX+itemW+5, itemY)
+        self.roi_convert_FileName_text.move(int(tempItemX+itemW+5), int(itemY))
 
 
     def keyPressEvent(self, e):    
@@ -365,7 +365,7 @@ class MainWindow(QWidget):
                 qformat = QImage.Format_RGBA8888
             else:
                 qformat = QImage.Format_RGB888
-        displayImg = QImage(openCVImg, size[1], size[0], step, qformat)
+        displayImg = QImage(openCVImg, int(size[1]), int(size[0]), int(step), qformat)
         # Swap r and b channel of QImage
         displayImg = displayImg.rgbSwapped()
 
